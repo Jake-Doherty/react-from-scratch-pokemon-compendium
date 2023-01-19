@@ -1,3 +1,3 @@
 ## Planning Document!
 
-![pl]
+![Planning Document](/poke-compendium@2x.png)
