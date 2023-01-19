@@ -1,16 +1,19 @@
 import React from 'react';
 import { usePokemon } from '../hooks/usePokemon.js';
+import PokemonCard from './PokemonCard/PokemonCard.js';
 import Select from './Select/Select.js';
 
 export default function Main() {
   const pokemon = usePokemon();
+
   console.log('pokemon', pokemon);
+
   return (
-    <div>
+    <main>
       <Select />
       {pokemon.map((monster) => (
-        <p key={monster.id}>{monster.pokemon}</p>
+        <PokemonCard key={monster.id} {...monster} />
       ))}
-    </div>
+    </main>
   );
 }
