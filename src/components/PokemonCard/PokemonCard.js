@@ -9,11 +9,10 @@ export default function PokemonCard({
   defense,
   base_experience,
 }) {
-  // console.log(url_image, pokedex);
   return (
     <div>
       <h2>{pokemon}</h2>
-      <a href={pokedex}>
+      <a href={pokedex} target="_blank" rel="noreferrer">
         <img src={url_image} />
       </a>
       <h4>HP: {hp}</h4>
