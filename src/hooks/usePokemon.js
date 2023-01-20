@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchInitialPokemon, fetchPokemonType } from '../services/fetchPokemon.js';
+import { fetchInitialPokemon, fetchPokemon, fetchPokemonType } from '../services/fetchPokemon.js';
 
 export function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
@@ -25,5 +25,10 @@ export function usePokemon() {
     fetchData();
   }, []);
 
-  return { pokemon, types };
+  const handleTypeChange = async (type) => {
+    const data = await fetchPokemon(type);
+    setPokemon(data);
+  };
+
+  return { pokemon, types, handleTypeChange };
 }
