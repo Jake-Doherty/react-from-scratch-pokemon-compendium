@@ -4,13 +4,13 @@ import PokemonCard from './PokemonCard/PokemonCard.js';
 import Select from './Select/Select.js';
 
 export default function Main() {
-  const pokemon = usePokemon();
+  const { pokemon, types } = usePokemon();
 
-  console.log('pokemon', pokemon);
+  // console.log('types', types);
 
   return (
     <main>
-      <Select />
+      <Select types={types} />
       {pokemon.map((monster) => (
         <PokemonCard key={monster.id} {...monster} />
       ))}
