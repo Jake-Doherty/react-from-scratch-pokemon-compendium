@@ -56,8 +56,6 @@ export function usePokemon() {
   };
 
   const handleSearch = async (e) => {
-    console.log('handle search', selectedType, query);
-
     e.preventDefault();
 
     setLoading(true);
