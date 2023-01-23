@@ -38,20 +38,34 @@ export function usePokemon() {
     fetchData();
   }, []);
 
-  const handleTypeChange = async () => {
+  const handleTypeChange = async (e) => {
+    // select type state is one behind the actual type selected. used target value to input type into api fetch call
+    setSelectedType(e.target.value);
+
+    const typeSelection = e.target.value;
+
     setLoading(true);
-    const data = await fetchPokemon(selectedType);
+
+    const data = await fetchPokemon(typeSelection);
+
     setPokemon(data);
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
   };
 
   const handleSearch = async (e) => {
+    console.log('handle search', selectedType, query);
+
     e.preventDefault();
+
     setLoading(true);
+
     const data = await fetchSearchedPokemon(selectedType, query);
+
     setPokemon(data);
+
     setLoading(false);
   };
 
@@ -60,6 +74,7 @@ export function usePokemon() {
     types,
     handleTypeChange,
     loading,
+    selectedType,
     setSelectedType,
     handleSearch,
     setQuery,

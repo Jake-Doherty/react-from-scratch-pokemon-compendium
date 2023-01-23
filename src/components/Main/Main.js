@@ -14,15 +14,21 @@ export default function Main() {
     handleSearch,
     query,
     setQuery,
+    selectedType,
     setSelectedType,
   } = usePokemon();
 
-  // console.log('types', types);
-
   return (
     <main>
-      <Query {...{ handleSearch, query, setQuery }} />
-      <Select types={types} handleTypeChange={handleTypeChange} setSelectedType={setSelectedType} />
+      <div className="search-container">
+        <Query {...{ handleSearch, query, setQuery }} />
+        <Select
+          types={types}
+          handleTypeChange={handleTypeChange}
+          selectedType={selectedType}
+          setSelectedType={setSelectedType}
+        />
+      </div>
       <Pokelist pokemon={pokemon} loading={loading} />
     </main>
   );
