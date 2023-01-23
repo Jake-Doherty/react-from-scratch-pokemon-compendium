@@ -1,4 +1,5 @@
 import React from 'react';
+import './PokemonCard.css';
 
 export default function PokemonCard({
   pokemon,
@@ -10,15 +11,17 @@ export default function PokemonCard({
   base_experience,
 }) {
   return (
-    <div>
-      <h2>{pokemon}</h2>
-      <a href={pokedex} target="_blank" rel="noreferrer">
-        <img src={url_image} />
+    <div className="poke-container">
+      <h2 className="poke-name">{pokemon}</h2>
+      <a className="poke-anchor" href={pokedex} target="_blank" rel="noreferrer">
+        <img className="image" src={url_image} />
       </a>
-      <h4>HP: {hp}</h4>
-      <h5>Base Experience: {base_experience}</h5>
-      <h5>Attack: {attack}</h5>
-      <h5>Defense: {defense}</h5>
+      <div className="stats">
+        <h4 className="hp">HP: {hp}</h4>
+        <h5 className="exp">Base Experience: {base_experience}</h5>
+        <h5 className="atk">Attack: {attack}</h5>
+        <h5 className="def">Defense: {defense}</h5>
+      </div>
     </div>
   );
 }

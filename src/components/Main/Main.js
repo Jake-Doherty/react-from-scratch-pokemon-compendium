@@ -1,8 +1,9 @@
 import React from 'react';
-import { usePokemon } from '../hooks/usePokemon.js';
-import Pokelist from './Pokelist/Pokelist.js';
-import Select from './Select/Select.js';
-import Query from './Query/Query.js';
+import { usePokemon } from '../../hooks/usePokemon.js';
+import Pokelist from '../Pokelist/Pokelist.js';
+import Select from '../Select/Select.js';
+import Query from '../Query/Query.js';
+import './Main.css';
 
 export default function Main() {
   const {

@@ -18,7 +18,7 @@ export async function fetchPokemon(type) {
   return data.results;
 }
 
-export async function fetchSearchedPokemon(pokemon, type) {
+export async function fetchSearchedPokemon(type, pokemon) {
   const params = new URLSearchParams();
   if (type !== 'all') {
     params.set('type', type);

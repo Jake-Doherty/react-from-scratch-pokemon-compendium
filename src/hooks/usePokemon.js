@@ -1,4 +1,4 @@
-import { type } from '@testing-library/user-event/dist/type/index.js';
+// import { type } from '@testing-library/user-event/dist/type/index.js';
 import { useEffect, useState } from 'react';
 import {
   fetchInitialPokemon,
@@ -50,7 +50,7 @@ export function usePokemon() {
   const handleSearch = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = await fetchSearchedPokemon(query, selectedType);
+    const data = await fetchSearchedPokemon(selectedType, query);
     setPokemon(data);
     setLoading(false);
   };

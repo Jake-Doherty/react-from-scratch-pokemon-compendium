@@ -1,4 +1,5 @@
 import React from 'react';
+import './Select.css';
 
 export default function Select({ handleTypeChange, types, setSelectedType }) {
   return (
@@ -8,6 +9,7 @@ export default function Select({ handleTypeChange, types, setSelectedType }) {
         handleTypeChange();
       }}
     >
+      <option value="all">All</option>
       {types.map(({ type }) => (
         <option key={type} value={type}>
           {type}
