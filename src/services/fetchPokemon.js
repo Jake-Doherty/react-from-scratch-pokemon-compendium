@@ -13,6 +13,7 @@ export async function fetchPokemonType() {
 }
 
 export async function fetchPokemon(type) {
+  if (type === 'all') return fetchInitialPokemon();
   const resp = await fetch(`https://alchemy-pokedex.herokuapp.com/api/pokedex/?type=${type}`);
   const data = await resp.json();
   return data.results;
